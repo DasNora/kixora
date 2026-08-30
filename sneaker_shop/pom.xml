@@ -1,0 +1,99 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- ===== Project Identity ===== -->
+    <groupId>com.sneakershop</groupId>
+    <artifactId>sneaker-shop</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <name>Sneaker Shop WebApp</name>
+    <description>Hybrid JSP/Servlet sneaker store with Spring Boot microservices integration (Java 8)</description>
+
+    <!-- ===== Java Version (1.8 Compatible) ===== -->
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- ===== Dependencies ===== -->
+    <dependencies>
+
+        <!-- Servlet API — lets us write Java classes that handle browser requests -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.1</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JSP API — lets us write .jsp pages with embedded Java -->
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>javax.servlet.jsp-api</artifactId>
+            <version>2.3.3</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- JSTL — gives us handy tags like c:forEach to loop over lists in JSP -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <!-- MySQL Connector — lets Java talk to our MySQL database -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.33</version>
+        </dependency>
+
+        <!-- Tomcat DBCP — connection pool: keeps DB connections ready and reuses them -->
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-dbcp</artifactId>
+            <version>9.0.83</version>
+        </dependency>
+        
+        <!--Gson-->
+        <dependency>
+    		<groupId>com.google.code.gson</groupId>
+   			<artifactId>gson</artifactId>
+    		<version>2.10.1</version>
+		</dependency>
+		
+		<!--Razorpay-->
+		<dependency>
+    		<groupId>com.razorpay</groupId>
+    		<artifactId>razorpay-java</artifactId>
+    		<version>1.4.8</version>
+		</dependency>
+
+		<dependency>
+    		<groupId>org.json</groupId>
+    		<artifactId>json</artifactId>
+    		<version>20240303</version>
+		</dependency>
+
+    </dependencies>
+    
+
+    <!-- ===== Build Configuration ===== -->
+    <build>
+        <finalName>sneaker-shop</finalName>
+        <plugins>
+            <!-- Maven WAR Plugin — packages everything into a .war file for Tomcat -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.3.2</version>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

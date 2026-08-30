@@ -1,0 +1,19 @@
+# Normalize text files to LF
+* text=auto
+
+# Java / web source files
+*.java text eol=lf
+*.jsp text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.xml text eol=lf
+*.properties text eol=lf
+*.json text eol=lf
+
+# Shell scripts
+*.sh text eol=lf
+
+# Windows batch files
+*.bat text eol=crlf
+*.cmd text eol=crlf
